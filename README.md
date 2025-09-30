@@ -32,3 +32,34 @@ python manage.py migrate
 
 # Run the development server
 python manage.py runserver
+```
+
+## API Documentation
+
+Here are some of the main endpoints exposed by the API:
+
+### Store Root
+- `GET /store/` → API Root  
+  Returns the available resources in the store, including:
+  - `products` → `/store/products/`
+  - `collections` → `/store/collections/`
+  - `carts` → `/store/carts/`
+  - `customers` → `/store/customers/`
+  - `orders` → `/store/orders/`
+
+### Authentication
+- `POST /auth/users/` → Register a new user  
+- `POST /auth/jwt/create/` → Login and obtain JWT token  
+
+### Cart
+- `POST /store/carts/` → Create a shopping cart  
+- `GET /store/carts/{cart_id}/` → Retrieve cart details  
+- `POST /store/carts/{cart_id}/items/` → Add item to cart  
+
+### Orders
+- `POST /store/orders/` → Create a new order  
+- `GET /store/orders/` → List orders for the authenticated user  
+
+### Admin
+- `GET /admin/` → Django admin panel for managing products, users, and orders
+
